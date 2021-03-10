@@ -1,0 +1,38 @@
+--TERMÍNY--
+10.3. Vytvoøit plán
+19.3. Testy pro matematickou knihovnou, README 
+28.3. Naimplementovaná matematická knihovna
+7.4.  Profiling, GUI kalkulaèky, doxygen 
+16.4. Funkèní kalkulaèka (Napojení GUI na knihovnu), instalátor
+25.4. Makefile, uživatelská pøíruèka, mockup
+30.4. 7:00 Finální deadline (Opravy, zkouška instalace)
+
+--ROZDÌLENÍ PRÁCE--
+Evžen Gasta 
+	- Testy matematické knihovny
+	- Doxygen
+	- Instalátor
+	- Makefile
+Stanislav Pøikryl
+	- README
+	- Základní fuknce matematické knihovny
+	- Profiling
+	- Uživatelská pøíruèka
+	- Zkouška instalace
+David Vlasák
+	- Pokroèilé funkce matematické knihovny
+	- GUI
+	- Napojení GUI na knihovnu
+	- Mockup
+
+--KOMUNIKAÈNÍ KANÁLY--
+Pro bìžnou textovou komunikaci jsme zvolili skupinovou konverzaci na Messengeru.
+Týmové hovory jsme se shodli uskuteèòovat každou støedu v 15:00 pøes platformu Discord. (Každá nepøítomnost nucena omluvit !!!)
+	- Plán aktuálního týdne
+	- CodeReview
+	- Pomoc (Pøi øešení specifického problému)
+
+--SPRÁVA VERZÍ A HOSTING--
+Pro správu verzí bude využit Git na hostingu: github.com
+Náš repozitáø je: https://github.com/dejvones/IVS
+Pøidali jsme uživatele ivskontrola jako collaborator a po pøijetí pozvání bude moct nahlédnout do repozitáøe
