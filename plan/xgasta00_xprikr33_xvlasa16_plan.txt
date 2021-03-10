@@ -1,5 +1,6 @@
 --TERMÍNY--
 10.3. Vytvoøit plán
+12.3. Vytvoøit interface pro matematickou knihovnu
 19.3. Testy pro matematickou knihovnou, README 
 28.3. Naimplementovaná matematická knihovna
 7.4.  Profiling, GUI kalkulaèky, doxygen 
@@ -20,6 +21,7 @@ Stanislav Pøikryl
 	- Uživatelská pøíruèka
 	- Zkouška instalace
 David Vlasák
+	- interface pro matematickou knihovnu
 	- Pokroèilé funkce matematické knihovny
 	- GUI
 	- Napojení GUI na knihovnu
