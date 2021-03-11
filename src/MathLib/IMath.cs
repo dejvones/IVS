@@ -44,7 +44,7 @@ namespace MathLib
         /// </summary>
         /// <param name="number">Číslo faktoriálu</param>
         /// <returns>Vrací výsledný faktoriál</returns>
-        ulong GetFactorial(double number);
+        ulong GetFactorial(int number);
 
         /// <summary>
         /// Funkce počítající N mocninu čísla

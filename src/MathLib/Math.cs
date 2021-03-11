@@ -26,7 +26,7 @@ namespace MathLib
             return 0;
         }
 
-        public ulong GetFactorial(double number)
+        public ulong GetFactorial(int number)
         {
             return 0;
         }
