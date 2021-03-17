@@ -57,10 +57,10 @@ namespace MathLib
         /// <summary>
         /// Funkce počítající obecnou odmocninu
         /// </summary>
-        /// <param name="basis">Základ odmocniny</param>
         /// <param name="degree">Stupeň odmocniny</param>
+        /// <param name="basis">Základ odmocniny</param>
         /// <returns>Vrací výslednou odmocninu</returns>
-        double GetRoot(double basis, double degree);
+        double GetRoot(double degree, double basis);
 
         /// <summary>
         /// Funkce počítající dekadický logaritmus

@@ -15,6 +15,9 @@ namespace MathLib.Tests
             math = new Math();
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet faktorialu
+        /// </summary>
         [Fact]
         public void GetFactorialTest()
         {
@@ -26,6 +29,9 @@ namespace MathLib.Tests
             Assert.Throws<OverflowException>(() => math.GetFactorial(50));
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet mocniny o ruznem zakladu
+        /// </summary>
         [Fact]
         public void GetPowerTest()
         {
@@ -34,8 +40,8 @@ namespace MathLib.Tests
             Assert.Equal(0,math.GetPower(0, 42));
             Assert.Equal(4,math.GetPower(2, 2));
 
-            //Predpoklada se -(1)^0 == -1   (-1)^0 == 0 by bylo rozsireni
-            Assert.Equal(-1,math.GetPower(-1, 0));
+            //Predpoklada se (-1)^0 == 1 
+            Assert.Equal(1,math.GetPower(-1, 0));
             Assert.Equal(42,math.GetPower(42, 1));
             Assert.Equal(0.5,math.GetPower(2, -1));
             Assert.Equal(1,math.GetPower(42, 0));
@@ -45,6 +51,9 @@ namespace MathLib.Tests
             Assert.Throws<OverflowException>(() => math.GetPower(0.0000005, -100)); 
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet odmocniny o ruznem zakladu
+        /// </summary>
         [Fact]
         public void GetRootTest()
         {
@@ -54,11 +63,15 @@ namespace MathLib.Tests
             Assert.Equal(0,math.GetRoot(0, 8));
             Assert.Equal(0,math.GetRoot(2, 0));
             Assert.Equal(1,math.GetRoot(3, 1));
+            Assert.Equal(-2,math.GetRoot(3,-8));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.GetRoot(-1,42));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.GetRoot(2, -42));
 
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet logaritmu o zakladu 10
+        /// </summary>
         [Fact]
         public void GetLog10Test()
         { 
@@ -71,6 +84,9 @@ namespace MathLib.Tests
             Assert.Throws<ArgumentOutOfRangeException>(() => math.Log10(-1));
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet logaritmu o zakladu E
+        /// </summary>
         [Fact]
         public void GetLogETest()
         {

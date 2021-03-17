@@ -15,6 +15,9 @@ namespace MathLib.Tests
             math = new Math();
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet souctu dvou cisel
+        /// </summary>
         [Fact]
         public void GetSumTest()
         { 
@@ -30,6 +33,9 @@ namespace MathLib.Tests
             Assert.Equal(0,math.GetSum(1.23456789, -1.23456789));
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet rozdilu dvou cisel
+        /// </summary>
         [Fact]
         public void GetSubTest()
         {
@@ -46,6 +52,9 @@ namespace MathLib.Tests
             Assert.Equal(2.46913578,math.GetSub(1.23456789, -1.23456789));
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet soucinu dvou cisel
+        /// </summary>
         [Fact]
         public void GetMulTest()
         {
@@ -60,6 +69,9 @@ namespace MathLib.Tests
             Assert.Equal(-1.524157875019052,math.GetMul(1.23456789, -1.23456789));
         }
 
+        /// <summary>
+        /// Test funkce pro vypocet podilu dvou cisel
+        /// </summary>
         [Fact]
         public void GetDivTest()
         {
