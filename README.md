@@ -5,9 +5,9 @@ Windows 64bit
 ### Autori
 
 ##### ESD
-- xgasta00 Enžen Gasta 
-- xprikr33 Stanislav Pøikryl 
-- xvlasa16 David Vlasák  
+- xgasta00 EvÅ¾en Gasta 
+- xprikr33 Stanislav PÅ™ikryl 
+- xvlasa16 David VlasÃ¡k  
 
 ### Licence
 
