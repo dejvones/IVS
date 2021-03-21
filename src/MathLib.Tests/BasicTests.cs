@@ -65,8 +65,8 @@ namespace MathLib.Tests
             Assert.Equal(-1,math.GetMul(-1, 1));
             Assert.Equal(1,math.GetMul(-1, -1));
             Assert.Equal(0,math.GetMul(0, 0));
-            Assert.Equal(1.524157875019052,math.GetMul(1.23456789, 1.23456789));
-            Assert.Equal(-1.524157875019052,math.GetMul(1.23456789, -1.23456789));
+            Assert.Equal(1.5241578750190519,math.GetMul(1.23456789, 1.23456789));
+            Assert.Equal(-1.5241578750190519,math.GetMul(1.23456789, -1.23456789));
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace MathLib.Tests
             Assert.Equal(-1,math.GetDiv(1, -1));
             Assert.Equal(-1,math.GetDiv(-1, 1));
             Assert.Equal(1,math.GetDiv(-1, -1));
-            Assert.Equal(0,math.GetMul(0, 42));
-            Assert.Equal(1,math.GetSub(1.23456789, 1.23456789));
-            Assert.Equal(-1,math.GetSub(1.23456789, -1.23456789));
+            Assert.Equal(0,math.GetDiv(0, 42));
+            Assert.Equal(1,math.GetDiv(1.23456789, 1.23456789));
+            Assert.Equal(-1,math.GetDiv(1.23456789, -1.23456789));
             Assert.Throws<DivideByZeroException>(() => math.GetDiv(42,0));
             Assert.Throws<DivideByZeroException>(() => math.GetDiv(0, 0));
 

@@ -11,19 +11,23 @@ namespace MathLib
     {
         public double GetSum(double number1, double number2)
         {
-            return 0;
+            return number1 + number2;
         }
         public double GetSub(double number1, double number2)
         {
-            return 0;
+            return number1 - number2;
         }
         public double GetMul(double number1, double number2)
         {
-            return 0;
+            return number1 * number2;
         }
         public double GetDiv(double number1, double number2)
         {
-            return 0;
+            if (number2 == 0)
+            {
+                throw new DivideByZeroException(); //TODO message
+            }
+            return number1 / number2;
         }
 
         public ulong GetFactorial(int number)
