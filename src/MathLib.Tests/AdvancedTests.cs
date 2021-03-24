@@ -46,7 +46,7 @@ namespace MathLib.Tests
             Assert.Equal(0.5,math.GetPower(2, -1));
             Assert.Equal(1,math.GetPower(42, 0));
             Assert.Equal(-2,math.GetPower(-0.5, -1));
-            Assert.Throws<OverflowException>(() => math.GetPower(50,50));
+            Assert.Equal(8.8817841970012525E+84, math.GetPower(50,50));
             //inf
             Assert.Throws<OverflowException>(() => math.GetPower(0.0000005, -100)); 
         }
@@ -60,10 +60,10 @@ namespace MathLib.Tests
             Assert.Equal(10,math.GetRoot(2,100));
             Assert.Equal(2,math.GetRoot(3, 8));
             Assert.Equal(8,math.GetRoot(1, 8));
-            Assert.Equal(0,math.GetRoot(0, 8));
             Assert.Equal(0,math.GetRoot(2, 0));
             Assert.Equal(1,math.GetRoot(3, 1));
             Assert.Equal(-2,math.GetRoot(3,-8));
+            Assert.Throws<ArgumentOutOfRangeException>(() => math.GetRoot(0, 8));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.GetRoot(-1,42));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.GetRoot(2, -42));
 
@@ -76,10 +76,10 @@ namespace MathLib.Tests
         public void GetLog10Test()
         { 
             Assert.Equal(0,math.Log10(1));
-            Assert.Equal(0.698970004336,math.Log10(5));
+            Assert.Equal(0.6989700043360189, math.Log10(5));
             Assert.Equal(2,math.Log10(100));
             Assert.Equal(-4,math.Log10(0.0001));
-            Assert.Equal(0.397940008672,math.Log10(2.5));
+            Assert.Equal(0.3979400086720376, math.Log10(2.5));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.Log10(0));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.Log10(-1));
         }
@@ -91,10 +91,10 @@ namespace MathLib.Tests
         public void GetLogETest()
         {
             Assert.Equal(0,math.LogE(1));
-            Assert.Equal(0.698970004336,math.LogE(5));
-            Assert.Equal(4.6051701859881,math.LogE(100));
-            Assert.Equal(-9.2103403719762,math.LogE(0.0001));
-            Assert.Equal(0.91629073187416,math.LogE(2.5));
+            Assert.Equal(1.6094379124341003, math.LogE(5));
+            Assert.Equal(4.605170185988092, math.LogE(100));
+            Assert.Equal(-9.210340371976182, math.LogE(0.0001));
+            Assert.Equal(0.9162907318741551, math.LogE(2.5));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.LogE(0));
             Assert.Throws<ArgumentOutOfRangeException>(() => math.LogE(-1));
         }
