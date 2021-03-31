@@ -3,10 +3,161 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Kalkulačka ESD" Height="550" Width="400" 
+        MinHeight="550" MinWidth="400" Background="#3D3D3D"
+        FocusManager.FocusedElement="{Binding ElementName=Input}" MouseLeftButtonUp="Window_MouseLeftButtonUp">
 
+    <Grid MaxWidth="600px" Background="#1A1A1A" x:Name="MainGrid">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50px"></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+            <RowDefinition Height="60px"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Source="/Style/info.png" HorizontalAlignment="Left" Margin="5px 5px 0 0" 
+               MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseLeftButtonDown="Image_MouseLeftButtonDown" />
+        <materialDesign:Card x:Name="InfoCard" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" 
+                             HorizontalAlignment="Left" Width="220px" Height="30px" Visibility="Hidden" 
+                             Margin="60px 0 0 0" Background="#828282">
+            <Label Content="Kliknutím sputíte nápovědu" HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+        </materialDesign:Card>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" x:Name="ScrollOutput">
+            <TextBlock  x:Name="Output" Foreground="White"
+                        TextWrapping="Wrap" FontSize="35" MaxWidth="600px"
+                       TextAlignment="Center" VerticalAlignment="Bottom"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                        />
+        </ScrollViewer>
+        
+                   
+        <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" x:Name="Input"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                 FontSize="30" Foreground="White" CaretBrush="#0000" PreviewTextInput="Input_PreviewTextInput" TextChanged="Input_TextChanged"/>
+        <Button Grid.Row="3" Grid.Column="0" x:Name="Remove"
+                Content="C" Height="60px" FontSize="25" Click="Remove_Click" />
+        <Button Grid.Row="3" Grid.Column="1" x:Name="Rb" Height="60px" FontSize="25" Click="Rb_Click">
+            <materialDesign:PackIcon Kind="Backspace" Width="25px" Height="25px"/>
+        </Button>
+        <Button Grid.Row="3" Grid.Column="2" x:Name="Fact" 
+                    Content="!" Height="60px" FontSize="25" Click="Fact_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="Div" Click="Operator2Operands_Click"
+                    Content="/" Height="60px" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="4" x:Name="Mul" Click="Operator2Operands_Click" 
+                    Height="60px" Padding="0px">
+            <StackPanel>
+                <Image Source="/Style/x.png" Width="40" Margin="0 10 0 0"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="4" Grid.Column="0" x:Name="Pow" Click="Operator2Operands_Click"
+                    Height="60px" Padding="0px">
+            <StackPanel>
+                <Image Source="/Style/x^n.png" Width="40"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="4" Grid.Column="1" x:Name="Num7" 
+                    Content="7" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="4" Grid.Column="2" x:Name="Num8" 
+                    Content="8" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="4" Grid.Column="3" x:Name="Num9" 
+                    Content="9" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="4" Grid.Column="4" x:Name="Sub" Click="Operator2Operands_Click" 
+                    Content="-" Height="60px" FontSize="25"/>
+        <Button Grid.Row="5" Grid.Column="0" x:Name="Root" Click="Operator2Operands_Click" 
+                Height="60px" Padding="0px">
+            <StackPanel>
+                <Image Source="/Style/sqrt.png" Width="60"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="5" Grid.Column="1" x:Name="Num4" 
+                Content="4" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="5" Grid.Column="2" x:Name="Num5" 
+                Content="5" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="5" Grid.Column="3" x:Name="Num6" 
+                Content="6" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="5" Grid.Column="4" x:Name="Add" 
+                Content="+" Height="60px" FontSize="25" Click="Operator2Operands_Click"/>
+        <Button Grid.Row="6" Grid.Column="0" x:Name="Log10" Click="OperatorLeft_Click"
+                Content="log" Height="60px" FontSize="25"/>
+        <Button Grid.Row="6" Grid.Column="1" x:Name="Num1" 
+                Content="1" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="6" Grid.Column="2" x:Name="Num2" 
+                Content="2" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="6" Grid.Column="3" x:Name="Num3" 
+                Content="3" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="6" Grid.RowSpan="2" Grid.Column="4" x:Name="Enter" 
+                Content="=" Height="120px" Background="White" FontSize="25" Foreground="#333333" Click="Enter_Click"/>
+        <Button Grid.Row="7" Grid.Column="0" x:Name="LogE" Click="OperatorLeft_Click" 
+                Content="ln" Height="60px" FontSize="25"/>
+        <Button Grid.Row="7" Grid.Column="1" x:Name="Neg" 
+                Content="+/-" Height="60px" Background="#5FC314" FontSize="25" Click="Neg_Click"/>
+        <Button Grid.Row="7" Grid.Column="2" x:Name="Num0" 
+                Content="0" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+        <Button Grid.Row="7" Grid.Column="3" x:Name="Dot" 
+                Content="." Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
+
+        <Canvas x:Name="HideTop" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideTopFirst" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideTopThird" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideNoButton" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForBasicOperator" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForBasicOperatorNumbers" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="4"
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideBottom" Grid.Row="3" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideAll" Grid.Row="0" Grid.Column="0" Grid.RowSpan="8" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForNumbersTop" Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForNumbersLeft" Grid.Row="4" Grid.Column="0" Grid.RowSpan="4" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForNumbersRight" Grid.Row="4" Grid.Column="4" Grid.RowSpan="4" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideEnter" Grid.Row="6" Grid.Column="4" Grid.RowSpan="2" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForExtraOpRow" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" 
+                Background="#BF000000" Visibility="Hidden"/>
+        <Canvas x:Name="HideForExtraOpNum" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="4"
+                Background="#BF000000" Visibility="Hidden"/>
+
+        <materialDesign:Card x:Name="HelpCard" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8"
+                             HorizontalAlignment="Center" VerticalAlignment="Top"
+                             Background="#828282" Margin="5px" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Button x:Name="BtnNext" Grid.Row="0" Content="&gt;&gt;" Width="50px" 
+                        HorizontalAlignment="Right" Margin="5px" Click="BtnNext_OnClick" />
+                <Button x:Name="BtnPrev" Grid.Row="0" Content="&lt;&lt;" Width="50px" Visibility="Hidden" 
+                        HorizontalAlignment="Left" Margin="5px" Click="BtnPrev_OnClick"/>
+                <TextBlock Margin="5px" x:Name="TextHelp" Grid.Row="1" TextWrapping="Wrap" 
+                           Foreground="White" HorizontalAlignment="Center" FontSize="20" MaxWidth="600px"/>
+            </Grid>
+        </materialDesign:Card>
     </Grid>
 </Window>

@@ -4,6 +4,28 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Style/icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="info.png" />
+    <None Remove="sqrt.png" />
+    <None Remove="Style\sqrt.png" />
+    <None Remove="Style\x.png" />
+    <None Remove="Style\x^n.png" />
+    <None Remove="x.png" />
+    <None Remove="x^n.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Style\info.png" />
+    <Resource Include="Style\sqrt.png" />
+    <Resource Include="Style\x.png" />
+    <Resource Include="Style\x^n.png" />
+  </ItemGroup>
 
 </Project>
