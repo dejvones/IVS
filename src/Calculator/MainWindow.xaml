@@ -58,16 +58,16 @@
             <materialDesign:PackIcon Kind="Backspace" Width="25px" Height="25px"/>
         </Button>
         <Button Grid.Row="3" Grid.Column="2" x:Name="Fact" 
-                    Content="!" Height="60px" FontSize="25" Click="Fact_Click"/>
-        <Button Grid.Row="3" Grid.Column="3" x:Name="Div" Click="Operator2Operands_Click"
+                    Content="!" Height="60px" FontSize="25" Click="Operator_Click"/>
+        <Button Grid.Row="3" Grid.Column="3" x:Name="Div" Click="Operator_Click"
                     Content="/" Height="60px" FontSize="25"/>
-        <Button Grid.Row="3" Grid.Column="4" x:Name="Mul" Click="Operator2Operands_Click" 
+        <Button Grid.Row="3" Grid.Column="4" x:Name="Mul" Click="Operator_Click" 
                     Height="60px" Padding="0px">
             <StackPanel>
                 <Image Source="/Style/x.png" Width="40" Margin="0 10 0 0"/>
             </StackPanel>
         </Button>
-        <Button Grid.Row="4" Grid.Column="0" x:Name="Pow" Click="Operator2Operands_Click"
+        <Button Grid.Row="4" Grid.Column="0" x:Name="Pow" Click="Operator_Click"
                     Height="60px" Padding="0px">
             <StackPanel>
                 <Image Source="/Style/x^n.png" Width="40"/>
@@ -79,9 +79,9 @@
                     Content="8" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
         <Button Grid.Row="4" Grid.Column="3" x:Name="Num9" 
                     Content="9" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
-        <Button Grid.Row="4" Grid.Column="4" x:Name="Sub" Click="Operator2Operands_Click" 
+        <Button Grid.Row="4" Grid.Column="4" x:Name="Sub" Click="Operator_Click" 
                     Content="-" Height="60px" FontSize="25"/>
-        <Button Grid.Row="5" Grid.Column="0" x:Name="Root" Click="Operator2Operands_Click" 
+        <Button Grid.Row="5" Grid.Column="0" x:Name="Root" Click="Operator_Click" 
                 Height="60px" Padding="0px">
             <StackPanel>
                 <Image Source="/Style/sqrt.png" Width="60"/>
@@ -94,7 +94,7 @@
         <Button Grid.Row="5" Grid.Column="3" x:Name="Num6" 
                 Content="6" Height="60px" Background="#5FC314" FontSize="25" Click="BtnNum_OnClick"/>
         <Button Grid.Row="5" Grid.Column="4" x:Name="Add" 
-                Content="+" Height="60px" FontSize="25" Click="Operator2Operands_Click"/>
+                Content="+" Height="60px" FontSize="25" Click="Operator_Click"/>
         <Button Grid.Row="6" Grid.Column="0" x:Name="Log10" Click="OperatorLeft_Click"
                 Content="log" Height="60px" FontSize="25"/>
         <Button Grid.Row="6" Grid.Column="1" x:Name="Num1" 

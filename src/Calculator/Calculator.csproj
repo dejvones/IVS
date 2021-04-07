@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MathLib\MathLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Style\info.png" />
     <Resource Include="Style\sqrt.png" />
     <Resource Include="Style\x.png" />
