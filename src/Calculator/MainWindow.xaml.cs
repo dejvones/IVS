@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,7 @@ namespace Calculator
         /// </summary>
         private enum Operator
         { 
-            None, Add, Sub, Mul, Div, Fact, Pow, Root, Log10, LogE
+            None, Add, Sub, Mul, Div, Fact, Pow, Root, Log10, LogE, AfterRemove
         }
         private Operator _operation = Operator.None;
         private double _operand;
@@ -135,6 +136,15 @@ namespace Calculator
         {
             if (Input.Text.Length > 0)
                 Input.Text = Input.Text.Remove(Input.Text.Length - 1);
+            if (_operation != Operator.None)
+            {
+                if (Output.Text.Length > 0)
+                {
+                    _operation = Operator.AfterRemove;
+                    Output.Text = Output.Text.Remove(Output.Text.Length - 1);
+                    Output.Text = Output.Text.Remove(Output.Text.Length - 1);
+                }
+            }
             SetFocus();
         }
 
@@ -219,17 +229,17 @@ namespace Calculator
             switch (operationName)
             {
                 case "Mul":
-                    _operand = Convert.ToDouble(Input.Text);
+                    _operand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
                     Output.Text += "\n" + Input.Text + " * ";
                     _operation = Operator.Mul;
                     break;
                 case "Root":
-                    _operand = Convert.ToDouble(Input.Text);
+                    _operand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
                     Output.Text += "\n" + Input.Text + "√";
                     _operation = Operator.Root;
                     break;
                 case "Pow":
-                    _operand = Convert.ToDouble(Input.Text);
+                    _operand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
                     Output.Text += "\n" + Input.Text + "^";
                     _operation = Operator.Pow;
                     break;
@@ -242,12 +252,12 @@ namespace Calculator
                     _operation = Operator.LogE;
                     break;
                 case "Fact":
-                    _operand = Convert.ToDouble(Input.Text);
+                    _operand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
                     Output.Text += "\n" + Input.Text + "!";
                     _operation = Operator.Fact;
                     break;
                 default:
-                    _operand = Convert.ToDouble(Input.Text);
+                    _operand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
                     Output.Text += "\n" + Input.Text + " " + ((Button) sender).Content + " ";
                     _operation = Enum.Parse<Operator>(operationName);
                     break;

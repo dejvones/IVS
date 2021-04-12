@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,10 @@ namespace Calculator
 
             double result = 0;
             int operand = 0;
+            double secondOperand = 0;
             Output.Text += Input.Text + " = ";
-            double secondOperand = Convert.ToDouble(Input.Text);
+            if (_operation != Operator.Fact)
+                secondOperand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
             switch (_operation)
             {
                 case Operator.Add:
@@ -39,8 +42,7 @@ namespace Calculator
                     }
                     catch (DivideByZeroException)
                     {
-                        MessageBox.Show("Nulou nelze dělit", "Dělení nulou", MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                        ShowError("Nulou nelze dělit!");
                         result = 0;
                     }
                     break;
@@ -52,8 +54,7 @@ namespace Calculator
                     }
                     catch
                     {
-                        MessageBox.Show("Očekává se celé nezáporné číslo", "Nevhodný operand", MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                        ShowError("Faktoriál očekává celé nezáporné číslo.");
                         result = 0;
                     }
                     break;
@@ -64,8 +65,7 @@ namespace Calculator
                     }
                     catch (OverflowException)
                     {
-                        MessageBox.Show("Výsledek není číslo", "Nekonečno", MessageBoxButton.OK,
-                            MessageBoxImage.Error);
+                        ShowError("Výsledek není číslo.");
                         result = 0;
                     }
                     break;
@@ -76,8 +76,7 @@ namespace Calculator
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        MessageBox.Show("Nevhodný stupeň odmocniny. Stupeň odmocniny musí být větší než 0.", "Nevhodný stupeň", 
-                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        ShowError("Nevhodný stupeň odmocniny. Stupeň odmocniny musí být větší než 0.");
                         result = 0;
                     }
                     break;
@@ -88,8 +87,7 @@ namespace Calculator
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        MessageBox.Show("Operand logaritmu musí být větší než 1.", "Nevhodný operand",
-                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        ShowError("Operand logaritmu musí být větší než 1!");
                         result = 0;
                     }
                     break;
@@ -100,15 +98,28 @@ namespace Calculator
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        MessageBox.Show("Operand logaritmu musí být větší než 1.", "Nevhodný operand",
-                            MessageBoxButton.OK, MessageBoxImage.Error);
+                        ShowError("Operand logaritmu musí být větší než 1!");
                         result = 0;
                     }
                     break;
             }
             _operation = Operator.None;
+            result = Math.Round(result, 12);
             Input.Text = Convert.ToString(result);
             _operand = result;
+        }
+
+        private void ShowError(string text)
+        {
+            HideAll.Visibility = Visibility.Visible;
+            Error.Visibility = Visibility.Visible;
+            ErrorText.Text = text;
+        }
+
+        private void BtnErrorOk_OnClick(object sender, RoutedEventArgs e)
+        {
+            HideAll.Visibility = Visibility.Hidden;
+            Error.Visibility = Visibility.Hidden;
         }
     }
 }

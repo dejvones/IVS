@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Calculator
@@ -55,7 +56,7 @@ namespace Calculator
                     HideForNumbersTop.Visibility = Visibility.Visible;
                     BtnPrev.Visibility = Visibility.Visible;
                     TextHelp.Text = "Pro zápis operandu můžeš použít svou klávesnici nebo tlačítka ve zvýrazněné oblasti. " +
-                                    "Při zápisu můžeš samozřejmě také mazat pomocí klávesnice, nebo za pomocíh speciálních tlačítek.";
+                                    "Při zápisu můžeš samozřejmě také mazat pomocí klávesnice, nebo za pomocí speciálních tlačítek.";
                     break;
                 case HelpStatus.InputView:
                     HideAllHelpCanvas();
@@ -83,7 +84,7 @@ namespace Calculator
                     HideBottom.Visibility = Visibility.Visible;
                     HideTopFirst.Visibility = Visibility.Visible;
                     HideTopThird.Visibility = Visibility.Visible;
-                    TextHelp.Text = "První operand, případně minulé výsledky uvidíš zde. Výsledek zobrazíš pomocí klávesy Enter nebo tlačítka.";
+                    TextHelp.Text = "Historii výpisu uvidíš zde. Výsledek zobrazíš pomocí klávesy Enter nebo tlačítka.";
                     break;
                 case HelpStatus.LastInfo:
                     HideAllHelpCanvas();
@@ -101,20 +102,11 @@ namespace Calculator
 
         private void HideAllHelpCanvas()
         {
-            HideTop.Visibility = Visibility.Hidden;
-            HideBottom.Visibility = Visibility.Hidden;
-            HideAll.Visibility = Visibility.Hidden;
-            HideForNumbersLeft.Visibility = Visibility.Hidden;
-            HideForNumbersRight.Visibility = Visibility.Hidden;
-            HideForNumbersTop.Visibility = Visibility.Hidden;
-            HideNoButton.Visibility = Visibility.Hidden;
-            HideForBasicOperator.Visibility = Visibility.Hidden;
-            HideForBasicOperatorNumbers.Visibility = Visibility.Hidden;
-            HideEnter.Visibility = Visibility.Hidden;
-            HideForExtraOpRow.Visibility = Visibility.Hidden;
-            HideForExtraOpNum.Visibility = Visibility.Hidden;
-            HideTopFirst.Visibility = Visibility.Hidden;
-            HideTopThird.Visibility = Visibility.Hidden;
+            var allCanvas = MainGrid.Children.OfType<Canvas>();
+            foreach (var helpCanvas in allCanvas)
+            {
+                helpCanvas.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

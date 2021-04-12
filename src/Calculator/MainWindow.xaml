@@ -36,7 +36,7 @@
                              HorizontalAlignment="Left" Width="220px" Height="30px" Visibility="Hidden" 
                              Margin="60px 0 0 0" Background="#828282">
             <Label Content="Kliknutím sputíte nápovědu" HorizontalAlignment="Center" 
-                   VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+                   VerticalAlignment="Center" Foreground="White" FontSize="14"/>
         </materialDesign:Card>
 
         <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" x:Name="ScrollOutput">
@@ -156,7 +156,21 @@
                 <Button x:Name="BtnPrev" Grid.Row="0" Content="&lt;&lt;" Width="50px" Visibility="Hidden" 
                         HorizontalAlignment="Left" Margin="5px" Click="BtnPrev_OnClick"/>
                 <TextBlock Margin="5px" x:Name="TextHelp" Grid.Row="1" TextWrapping="Wrap" 
-                           Foreground="White" HorizontalAlignment="Center" FontSize="20" MaxWidth="600px"/>
+                           Foreground="White" HorizontalAlignment="Center" FontSize="16" MaxWidth="600px"/>
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card x:Name="Error" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Grid.RowSpan="8"
+        HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFF3939" Visibility="Hidden">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="ErrorText" Grid.Row="0" TextWrapping="Wrap"  Grid.Column="0" HorizontalAlignment="Left" 
+                       Foreground="White" FontSize="18" Margin="0 0 60px 0"/>
+                <Button Grid.Row="1" Width="50px" HorizontalAlignment="Right" Margin="5px"
+                        Click ="BtnErrorOk_OnClick" Content="Ok"/>
             </Grid>
         </materialDesign:Card>
     </Grid>
