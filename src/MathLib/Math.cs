@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Text;
 
+
+/// <summary>
+/// Matematicka knihovna
+/// </summary>
 namespace MathLib
 {
     /// <summary>

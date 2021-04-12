@@ -1,14 +1,22 @@
 ﻿using System;
 using Xunit;
 
+/// <summary>
+/// Testy pro matematickou knihovnu
+/// @file lasd
+/// </summary>
 namespace MathLib.Tests
 {
+    /// <summary>
+    /// Advanced testy 
+    /// </summary>
     public class AdvancedTests
     {
         private readonly IMath math;
 
         /// <summary>
         /// Konstruktor pro pokročilé testy
+        /// @brief alkdfja
         /// </summary>
         public AdvancedTests()
         {
