@@ -19,28 +19,51 @@ namespace Calculator
             Start, Input, InputView, Operator, OperatorExtra, Output, LastInfo, End
         }
 
+        /// <summary>
+        /// Aktuální stav nápovědy
+        /// </summary>
         private HelpStatus _status = HelpStatus.Start;
 
-
+        /// <summary>
+        /// Kliknutí na obrázek "i" a zapnutí nápovědy
+        /// </summary>
+        /// <param name="sender">Obrázek "i"</param>
+        /// <param name="e">Událost kliknutí</param>
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             HelpCard.Visibility = Visibility.Visible;
             _status = HelpStatus.Start;
             Guide();
         }
+
+        /// <summary>
+        /// Navigace v nápovědě doprava
+        /// </summary>
+        /// <param name="sender">Tlačítko doprava v nápovědě</param>
+        /// <param name="e">Událost kliknutí</param>
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
         {
             _status++;
             Guide();
         }
+
+        /// <summary>
+        /// Navigace v nápovědě doleva
+        /// </summary>
+        /// <param name="sender">Tlačítko doleva v nápovědě</param>
+        /// <param name="e">Událost kliknutí</param>
         private void BtnPrev_OnClick(object sender, RoutedEventArgs e)
         {
             _status--;
             Guide();
         }
 
+        /// <summary>
+        /// Spuštění nápovědy
+        /// </summary>
         private void Guide()
         {
+            //Podle stavu nápovědy 
             switch (_status)
             {
                 case HelpStatus.Start:
@@ -100,6 +123,9 @@ namespace Calculator
             }
         }
 
+        /// <summary>
+        /// Zneaktivování celé kalkulačku kvůli nápovědě
+        /// </summary>
         private void HideAllHelpCanvas()
         {
             var allCanvas = MainGrid.Children.OfType<Canvas>();

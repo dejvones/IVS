@@ -10,8 +10,12 @@ namespace Calculator
 {
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Vypočítá daný příklad pomocí knihovny
+        /// </summary>
         private void GetResult()
         {
+            //Nespravný počet operandů
             if (_operation != Operator.Fact && Input.Text == "")
             {
                 MessageBox.Show("Operator vyzaduje 2 oprandy", "Chyba: Spatny zapis", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -24,6 +28,7 @@ namespace Calculator
             Output.Text += Input.Text + " = ";
             if (_operation != Operator.Fact)
                 secondOperand = double.Parse(Input.Text, CultureInfo.InvariantCulture);
+            //Podle operace provede
             switch (_operation)
             {
                 case Operator.Add:
@@ -103,12 +108,17 @@ namespace Calculator
                     }
                     break;
             }
+            //Vypíše
             _operation = Operator.None;
             result = Math.Round(result, 12);
             Input.Text = Convert.ToString(result);
             _operand = result;
         }
 
+        /// <summary>
+        /// Zobrazí okno Erroru s daným textem
+        /// </summary>
+        /// <param name="text">Text Erroru</param>
         private void ShowError(string text)
         {
             HideAll.Visibility = Visibility.Visible;
@@ -116,6 +126,11 @@ namespace Calculator
             ErrorText.Text = text;
         }
 
+        /// <summary>
+        /// Kliknutí na tlačítko Ok, při zobrazení Erroru a jeho ukončení
+        /// </summary>
+        /// <param name="sender">Tlačítko Ok v Erroru</param>
+        /// <param name="e">Událost kliknutí</param>
         private void BtnErrorOk_OnClick(object sender, RoutedEventArgs e)
         {
             HideAll.Visibility = Visibility.Hidden;

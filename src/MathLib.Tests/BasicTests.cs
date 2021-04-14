@@ -3,12 +3,18 @@ using Xunit;
 
 namespace MathLib.Tests
 {
+    /// <summary>
+    /// Základní testy matematické knihovny
+    /// </summary>
     public class BasicTests
     {
+        /// <summary>
+        /// Instance matematické knihovny
+        /// </summary>
         private readonly IMath math;
 
         /// <summary>
-        /// Konstruktor pro základní testy
+        /// Konstruktor pro základní testy, který vytvoří novou instanci matematické knihovny
         /// </summary>
         public BasicTests()
         {

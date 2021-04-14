@@ -3,20 +3,21 @@ using Xunit;
 
 /// <summary>
 /// Testy pro matematickou knihovnu
-/// @file lasd
 /// </summary>
 namespace MathLib.Tests
 {
     /// <summary>
-    /// Advanced testy 
+    /// Pokročilé testy pro matematickou knihovnu
     /// </summary>
     public class AdvancedTests
     {
+        /// <summary>
+        /// Instance matematické knihovny
+        /// </summary>
         private readonly IMath math;
 
         /// <summary>
-        /// Konstruktor pro pokročilé testy
-        /// @brief alkdfja
+        /// Konstruktor pro pokročilé testy, který vytvoří novou instanci matematické knihovny
         /// </summary>
         public AdvancedTests()
         {
