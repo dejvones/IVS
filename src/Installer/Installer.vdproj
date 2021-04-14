@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:Installer"
-"LanguageId" = "3:1033"
-"CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"LanguageId" = "3:1029"
+"CodePage" = "3:1250"
+"UILanguageId" = "3:1029"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -21,13 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_BB79C6C4645E4954883D09149DE01B8F"
+        "MsmKey" = "8:_A3E525D4E19D4FC4A0BDA93C8432430B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_C839A106B52340C089B6069B2DFCE15A"
+        "MsmKey" = "8:_BB79C6C4645E4954883D09149DE01B8F"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -49,6 +49,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -117,7 +133,7 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C839A106B52340C089B6069B2DFCE15A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A3E525D4E19D4FC4A0BDA93C8432430B"
             {
             "SourcePath" = "8:..\\Calculator\\Style\\icon.ico"
             "TargetName" = "8:icon.ico"
@@ -145,7 +161,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_503F28FE6F604F4D8D5AF82E5B2D9DAB"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -186,15 +202,15 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:1029"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Installer"
+        "ProductName" = "8:Kalkulacka"
         "ProductCode" = "8:{8FD1A597-0A4A-4EC6-83A8-4E5BC262DB7D}"
-        "PackageCode" = "8:{31CDEB5C-A3EB-4217-BEA4-2A7671947A31}"
+        "PackageCode" = "8:{539C9471-659E-4BF7-86B0-2204D34B0025}"
         "UpgradeCode" = "8:{36144F21-A616-476A-ABF0-3F9A3EAC1E5C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -202,20 +218,20 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:d3jv.david@gmail.com"
+        "Manufacturer" = "8:Kalkulacka"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:d3jv.david@gmail.com"
+        "ARPCONTACT" = "8:ESD Company"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:Instalatopr pro kalkulacku"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -314,6 +330,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_9A1D05B1573C4757BB57ABD2DDC65E24"
+            {
+            "Name" = "8:Kalkulacka"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_BB79C6C4645E4954883D09149DE01B8F"
+            "Folder" = "8:_7B81B10FE9F24BA097912A1FC1DE229F"
+            "WorkingFolder" = "8:"
+            "Icon" = "8:_A3E525D4E19D4FC4A0BDA93C8432430B"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -743,7 +773,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_879ADA5C3E19430AB2F261DA86D9F6CF"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Release\\net5.0-windows\\Calculator.dll"
+            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\net5.0-windows\\Calculator.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_503F28FE6F604F4D8D5AF82E5B2D9DAB"
@@ -771,7 +801,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BB79C6C4645E4954883D09149DE01B8F"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Release\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_503F28FE6F604F4D8D5AF82E5B2D9DAB"
