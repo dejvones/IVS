@@ -116,6 +116,12 @@ namespace Calculator
             
             WriteNextExample();
 
+            //Zkontroluje 
+            if (Input.Text.Length > 20)
+            {
+                e.Handled = true;
+                return;
+            }
             //Zapíše zda-li je číslo
             e.Handled = !CheckNumber(Input.Text + e.Text);
         }

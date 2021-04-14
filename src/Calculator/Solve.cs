@@ -18,7 +18,7 @@ namespace Calculator
             //Nespravný počet operandů
             if (_operation != Operator.Fact && Input.Text == "")
             {
-                MessageBox.Show("Operator vyzaduje 2 oprandy", "Chyba: Spatny zapis", MessageBoxButton.OK, MessageBoxImage.Error);
+                ShowError("Operator vyžaduje 2 oprandy!");
                 return;
             }
 
@@ -57,9 +57,14 @@ namespace Calculator
                         operand = (int) _operand;
                         result = _math.GetFactorial(operand);
                     }
-                    catch
+                    catch (ArgumentOutOfRangeException)
                     {
                         ShowError("Faktoriál očekává celé nezáporné číslo.");
+                        result = 0;
+                    }
+                    catch
+                    {
+                        ShowError("Výsledek není číslo.");
                         result = 0;
                     }
                     break;
