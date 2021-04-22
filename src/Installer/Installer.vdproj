@@ -71,7 +71,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:..\\..\\..\\..\\..\\Desktop\\setup.msi"
+        "OutputFilename" = "8:..\\setup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -87,18 +87,13 @@
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
-            "ComponentsUrl" = "8:"
+            "ComponentsUrl" = "8:https://download.visualstudio.microsoft.com/download/pr/c1ef0b3f-9663-4fc5-85eb-4a9cadacdb87/52b890f91e6bd4350d29d2482038df1c/windowsdesktop-runtime-5.0.5-win-x64.exe"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.CoreRuntime.5.0.x64"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.DesktopRuntime.5.0.x64"
                     {
-                    "Name" = "8:.NET Runtime 5.0.4 (x64)"
-                    "ProductCode" = "8:Microsoft.NetCore.CoreRuntime.5.0.x64"
-                    }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.NetCore.CoreRuntime.5.0.x86"
-                    {
-                    "Name" = "8:.NET Runtime 5.0.4 (x86)"
-                    "ProductCode" = "8:Microsoft.NetCore.CoreRuntime.5.0.x86"
+                    "Name" = "8:.NET Desktop Runtime 5.0.4 (x64)"
+                    "ProductCode" = "8:Microsoft.NetCore.DesktopRuntime.5.0.x64"
                     }
                 }
             }
@@ -210,7 +205,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Kalkulacka"
         "ProductCode" = "8:{8FD1A597-0A4A-4EC6-83A8-4E5BC262DB7D}"
-        "PackageCode" = "8:{539C9471-659E-4BF7-86B0-2204D34B0025}"
+        "PackageCode" = "8:{C5AE84EB-91FC-4D25-930E-7EE74D25F908}"
         "UpgradeCode" = "8:{36144F21-A616-476A-ABF0-3F9A3EAC1E5C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -773,7 +768,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_879ADA5C3E19430AB2F261DA86D9F6CF"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\net5.0-windows\\Calculator.dll"
+            "SourcePath" = "8:..\\Calculator\\obj\\Release\\net5.0-windows\\Calculator.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_503F28FE6F604F4D8D5AF82E5B2D9DAB"
@@ -801,7 +796,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_BB79C6C4645E4954883D09149DE01B8F"
             {
-            "SourcePath" = "8:..\\Calculator\\obj\\Debug\\net5.0-windows\\apphost.exe"
+            "SourcePath" = "8:..\\Calculator\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_503F28FE6F604F4D8D5AF82E5B2D9DAB"
