@@ -13,6 +13,7 @@
 FileCalculator=Calculator/bin/Release/net5.0-windows/Calculator.exe
 FileProfiling=Profiling/bin/Release/net5.0/Profiling.exe
 resultDir=.\xgasta00_xprikr33_xvlasa16
+profileData=./Profiling/test/data100.txt
 
 .PHONY: all pack clean profile help run doc
 
@@ -35,7 +36,7 @@ endif
 	git clone https://github.com/dejvones/IVS
 	xcopy .\IVS /s /q $(resultDir)\repo
 	rm -f -r "IVS"
-	tar.exe -c -f xgasta00_xprikr33_xvlasa16.zip xgasta00_xprikr33_xvlasa16
+	cd xgasta00_xprikr33_xvlasa16 && tar.exe -c -f ../xgasta00_xprikr33_xvlasa16.zip *
 	rm -f -r "xgasta00_xprikr33_xvlasa16"
 
 clean: 
@@ -43,7 +44,7 @@ clean:
 	rm -f -r ./*/obj
 
 profile:
-	$(FileProfiling) < ./Profiling/test/data100.txt
+	$(FileProfiling) < $(profileData)
 
 help: 
 	$(info Napoveda k pouziti makefile)
