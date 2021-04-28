@@ -1,0 +1,3 @@
+Ze zaèátku jsme se drželi plánu s velkými rezervami. První odchylka od plánu nastala s profilingem, protoze jsme jej naplánovali na døíve, než o nìm probìhla pøednáška.
+Další odhylku zpùsobil instalátor, mìli jsme jistou pøedstavu jak by mìl instalátor vypadat, což zabralo více èasu.
+Poslední odchylka byla vytvoøit makefile, což na operaèním systému Windows není pøíliš programátorsky pøívìtivé.

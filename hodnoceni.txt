@@ -1,0 +1,3 @@
+xgasta00 100 (testy matematické knihovny, doxyfile, instalátor, makefile)
+xprikr33 100 (readme, základní matematické funkce, profiling, uživatelská pøíruèka)
+xvlasa16 100 (pokroèilé matemacické funkce, GUI kalkulaèky, napojení kalkulaèky na knihovnu, mockup)
